@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Blockmatrix Chatting Dapp</title>
+    <link rel="icon" href="assets/favicon.ico?" type="image/x-icon">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body style="font-family:Verdana">
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h4>Transaction Details</h4>
+            <hr></hr>
+            <p id="transaction-details"></p>
+        </div>    
+    </div>
+
+    <div class="container">
+        <div class="row" style="padding-top:20px;">
+            <h3 class="text-center">Decentralize Chatting Application</h3><br>
+            <div class="col-md-12">
+                <div id="chat-box-panel" class="panel panel-primary">
+                    <div class="panel-heading">
+                        CHAT HISTORY
+                    </div>
+                    <div class="panel-body" style="overflow-y:scroll; height:500px">
+                        <div id="chat-box" class="media-list"></div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="input-group">
+                            <input type="text" id="messageInput" class="form-control" placeholder="Enter Message" />
+                            <div class="input-group-btn">
+                                <button class="btn btn-info" id="sendButton" type="button"
+                                    onclick="sendMessage()">SEND</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="register-panel" class="panel panel-primary">
+                    <div class="panel-heading">
+                        Register
+                    </div>
+                    <div class="panel-body" style="overflow-y:scroll; height:100px; padding-top:30px;">
+                        <input type="text" id="registerInput" class="form-control" placeholder="Enter Name" />
+                    </div>
+                    <div class="panel-footer text-center">
+                        <button class="btn btn-info" id="createButton" type="button"
+                            onclick="createUser()">REGISTER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/web3.min.js"></script>
+<script src="assets/js/app.js"></script>
+
+</html>
