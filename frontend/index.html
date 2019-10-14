@@ -27,9 +27,9 @@
             <div class="col-md-12">
                 <div id="chat-box-panel" class="panel panel-primary">
                     <div class="panel-heading">
-                        CHAT HISTORY
+                        <div id="headerFields"></div><br>
                     </div>
-                    <div class="panel-body" style="overflow-y:scroll; height:500px">
+                    <div class="panel-body" id="panel-body" style="overflow-y:auto; height:500px">
                         <div id="chat-box" class="media-list"></div>
                     </div>
                     <div class="panel-footer">
@@ -37,7 +37,7 @@
                             <input type="text" id="messageInput" class="form-control" placeholder="Enter Message" />
                             <div class="input-group-btn">
                                 <button class="btn btn-info" id="sendButton" type="button"
-                                    onclick="sendMessage()">SEND</button>
+                                    onclick="sendMessage()" disabled>SEND</button>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="panel-footer text-center">
                         <button class="btn btn-info" id="createButton" type="button"
-                            onclick="createUser()">REGISTER</button>
+                            onclick="createUser()" disabled>REGISTER</button>
                     </div>
                 </div>
             </div>
