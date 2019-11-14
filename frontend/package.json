@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "name": "chatting-dapp-ethereum",
+  "version": "1.0.0",
+  "description": "chatting-dapp-ethereum",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-rebuild",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "repository": "https://github.com/sarathkaleswaram/ledger-live-electron-hid.git",
+  "keywords": [
+    "Electron",
+    "Ethereum"
+  ],
+  "build": {
+    "appId": "com.blocmatrix.chat.dapp",
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "./assets/logo.icns"
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "./assets/logo.png"
+    }
+  },
+  "author": {
+    "name": "Sarath Kaleswaram",
+    "email": "sarath.kaleswaram@blocmatrix.com"
+  },
+  "devDependencies": {
+    "electron": "^4.0.3",
+    "electron-builder": "^20.44.4",
+    "electron-rebuild": "^1.8.4"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "jsonschema": "^1.2.2"
+  },
+  "resolutions": {
+    "jsonschema": "1.2.2"
+  }
+}

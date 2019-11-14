@@ -1,10 +1,10 @@
 let myName = ''
 let messagesOnBlockchain = ''
 
-window.web3 = new Web3(window.web3 ? window.web3.currentProvider : new Web3.providers.HttpProvider('http://183.82.116.216:7545'))
+window.web3 = new Web3(window.web3 ? window.web3.currentProvider : new Web3.providers.HttpProvider('http://localhost:8545'))
 
-const contractABI = [{ "constant": false, "inputs": [{ "internalType": "string", "name": "name", "type": "string" }], "name": "createUser", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "string", "name": "message", "type": "string" }], "name": "writeMessage", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "sender", "type": "address" }, { "indexed": false, "internalType": "string", "name": "message", "type": "string" }, { "indexed": false, "internalType": "uint256", "name": "timestamp", "type": "uint256" }], "name": "newMessageEvent", "type": "event" }, { "constant": true, "inputs": [], "name": "getUserCount", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "userAddress", "type": "address" }], "name": "getUsernameForAddress", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }]
-const contractAddress = '0x0ff2ce7ee89dafaaee772a0b94ef291e8d7a4904'
+const contractABI = [{"constant":false,"inputs":[{"internalType":"string","name":"name","type":"string"}],"name":"createUser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"string","name":"message","type":"string"}],"name":"writeMessage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"sender","type":"address"},{"indexed":false,"internalType":"string","name":"message","type":"string"},{"indexed":false,"internalType":"uint256","name":"timestamp","type":"uint256"}],"name":"newMessageEvent","type":"event"},{"constant":true,"inputs":[],"name":"getUserCount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUsernameForAddress","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]
+const contractAddress = '0xe78a0f7e598cc8b0bb87894b0f60dd2a88d6a8ab'
 const contractInstance = web3.eth.contract(contractABI).at(contractAddress)
 
 if (localStorage.getItem("isUserRegistered")) {
@@ -19,7 +19,7 @@ if (localStorage.getItem("isUserRegistered")) {
     document.getElementById("register-panel").style.display = "block"
 
     contractInstance.getUserCount((error, resp) => {
-        if (error) alert(error)
+        if (error) alert("Server Error. Contact Admin.")
 
         console.log("User Count: ", resp.c[0])
         localStorage.setItem("dAppAccount", web3.eth.accounts[resp.c[0]])
