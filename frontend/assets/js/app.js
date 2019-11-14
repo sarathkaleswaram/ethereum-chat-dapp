@@ -1,7 +1,7 @@
 let myName = ''
 let messagesOnBlockchain = ''
 
-window.web3 = new Web3(window.web3 ? window.web3.currentProvider : new Web3.providers.HttpProvider('http://localhost:8545'))
+window.web3 = new Web3(window.web3 ? window.web3.currentProvider : new Web3.providers.HttpProvider('http://183.82.116.216/:8545'))
 
 const contractABI = [{"constant":false,"inputs":[{"internalType":"string","name":"name","type":"string"}],"name":"createUser","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"internalType":"string","name":"message","type":"string"}],"name":"writeMessage","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"sender","type":"address"},{"indexed":false,"internalType":"string","name":"message","type":"string"},{"indexed":false,"internalType":"uint256","name":"timestamp","type":"uint256"}],"name":"newMessageEvent","type":"event"},{"constant":true,"inputs":[],"name":"getUserCount","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"userAddress","type":"address"}],"name":"getUsernameForAddress","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]
 const contractAddress = '0xe78a0f7e598cc8b0bb87894b0f60dd2a88d6a8ab'
